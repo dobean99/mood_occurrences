@@ -1,5 +1,5 @@
-import 'package:balloon_in_the_sky/core/constants/app_colors.dart';
 import 'package:flutter/material.dart';
+import 'package:mood_occurrences/core/constants/app_colors.dart';
 
 class GradientStrokeText extends StatelessWidget {
   const GradientStrokeText({
