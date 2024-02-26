@@ -62,7 +62,7 @@ class AppTheme {
     brightness: Brightness.dark,
 
     /// Primary Color
-    primaryColor: AppColors.primaryColor,
+    primaryColor: AppColors.greyColor,
 
     /// Scaffold and Background color
     scaffoldBackgroundColor: const Color(0xff161616),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mood_occurrences/core/constants/app_constants.dart';
 
 class CustomButton extends StatelessWidget {
   final String text;
@@ -23,10 +24,10 @@ class CustomButton extends StatelessWidget {
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(10.0),
         ),
-        textStyle: TextStyle(
-          color: textColor,
-          fontSize: 16.0,
-        ),
+        textStyle: const TextStyle(
+            color: Colors.white,
+            fontSize: AppConstants.titleFontSize,
+            fontWeight: FontWeight.w900),
       ),
       child: Text(text),
     );

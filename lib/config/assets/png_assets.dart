@@ -3,6 +3,9 @@ class PngAssets {
   static String get menuBG => 'menu_bg'.png;
   static String get volunmOff => 'volunm_off'.png;
   static String get volunmOn => 'volunm_on'.png;
+  static String get message => 'message'.png;
+  static String get back => 'back'.png;
+
   const PngAssets._();
 }
 

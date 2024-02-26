@@ -1,7 +1,7 @@
 class AppConstants {
   static const titleFontSize = 40.0;
   static const bigButtonFontSize = 24.0;
-  static const mediumFontSize = 20.0;
+  static const mediumFontSize = 22.0;
   static const smallFontSize = 16.0;
 
   static const borderRadius = 50.0;

@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 
 class AppColors {
-  static const Color primaryColor = Color(0xFF232323);
-  static const Color howlingPink = Color(0xFFE20E50);
-  static const Color doveGrey = Color(0xFF6d6d6d);
-  static const Color blackColor = Colors.black;
+  static const Color greyColor = Color(0xFF494B53);
+  static const Color greenColor = Color(0xFF10AE2B);
+  static const Color redColor = Color(0xFFD65B55);
+  static const Color blackColor = Color(0xFF151515);
+  static const Color yellowColor = Color(0xFFF8C631);
   static const Color whiteColor = Colors.white;
-  static const Color lightTextColor = Color.fromRGBO(122, 134, 154, 1);
 
-  static Shader linearGradient = const LinearGradient(
-    colors: <Color>[blackColor, primaryColor, doveGrey],
-  ).createShader(const Rect.fromLTWH(0.0, 0.0, 0.0, 0.0));
+//   static Shader linearGradient = const LinearGradient(
+//     colors: <Color>[blackColor, primaryColor, doveGrey],
+//   ).createShader(const Rect.fromLTWH(0.0, 0.0, 0.0, 0.0));
 
-  static const LinearGradient blackToGrey = LinearGradient(
-    colors: <Color>[blackColor, primaryColor, doveGrey],
-  );
+//   static const LinearGradient blackToGrey = LinearGradient(
+//     colors: <Color>[blackColor, primaryColor, doveGrey],
+//   );
 }
