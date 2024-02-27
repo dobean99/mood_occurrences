@@ -11,11 +11,11 @@ class RoundedContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-          color: color ?? AppColors.redColor,
+          color: color ?? AppColors.greyColor,
           borderRadius: const BorderRadius.only(
               bottomLeft: Radius.circular(10),
               bottomRight: Radius.circular(10))),
-      child: child,
+      child: IntrinsicWidth(child: child),
     );
   }
 }

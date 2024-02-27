@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mood_occurrences/config/assets/assets.dart';
-import 'package:mood_occurrences/core/constants/app_colors.dart';
 import 'package:mood_occurrences/core/constants/app_constants.dart';
+import 'package:mood_occurrences/screens/lethargic_screen.dart';
 import 'package:mood_occurrences/screens/shared/commons/base_layout.dart';
 import 'package:mood_occurrences/screens/shared/commons/circle_stroke_button.dart';
 import 'package:mood_occurrences/screens/shared/commons/parallelogram_button.dart';
@@ -33,19 +33,15 @@ class MyMoodTodayScreen extends StatelessWidget {
                 ),
               ),
               const RoundedContainer(
-                color: AppColors.greyColor,
-                child: IntrinsicWidth(
-                  child: Padding(
-                    padding:
-                        EdgeInsets.symmetric(vertical: 40.0, horizontal: 20),
-                    child: Text(
-                      "What’s your mood today?\nChoose one of the\nvariants below and\ncheck the activities\nwhich can help you feel\nbetter",
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: AppConstants.mediumFontSize,
-                          fontWeight: FontWeight.w900),
-                      textAlign: TextAlign.center,
-                    ),
+                child: Padding(
+                  padding: EdgeInsets.symmetric(vertical: 40.0, horizontal: 20),
+                  child: Text(
+                    "What’s your mood today?\nChoose one of the\nvariants below and\ncheck the activities\nwhich can help you feel\nbetter",
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontSize: AppConstants.mediumFontSize,
+                        fontWeight: FontWeight.w900),
+                    textAlign: TextAlign.center,
                   ),
                 ),
               ),
@@ -56,7 +52,15 @@ class MyMoodTodayScreen extends StatelessWidget {
           ),
           Column(
             children: [
-              ParallelogramButton(onPressed: () {}, text: "Lethargic"),
+              ParallelogramButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const LethargicScreen()),
+                    );
+                  },
+                  text: "Lethargic"),
               const SizedBox(
                 height: 20,
               ),

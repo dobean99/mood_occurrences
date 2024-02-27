@@ -7,6 +7,7 @@ class AppColors {
   static const Color blackColor = Color(0xFF151515);
   static const Color yellowColor = Color(0xFFF8C631);
   static const Color whiteColor = Colors.white;
+  static const Color textColor = Color(0xFF6A6A6A);
 
 //   static Shader linearGradient = const LinearGradient(
 //     colors: <Color>[blackColor, primaryColor, doveGrey],
