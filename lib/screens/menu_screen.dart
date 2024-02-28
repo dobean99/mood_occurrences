@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:mood_occurrences/config/assets/assets.dart';
-import 'package:mood_occurrences/core/constants/app_colors.dart';
 import 'package:mood_occurrences/core/constants/app_constants.dart';
 import 'package:mood_occurrences/screens/my_events_screen.dart';
 import 'package:mood_occurrences/screens/my_mood_today_screen.dart';
+import 'package:mood_occurrences/screens/provider/sound_provider.dart';
+import 'package:mood_occurrences/screens/provider/theme_provider.dart';
 import 'package:mood_occurrences/screens/shared/commons/base_layout.dart';
 import 'package:mood_occurrences/screens/shared/commons/circle_stroke_button.dart';
 import 'package:mood_occurrences/screens/shared/commons/parallelogram_button.dart';
 import 'package:mood_occurrences/screens/shared/commons/rounded_container.dart';
 import 'package:mood_occurrences/screens/theme_screen.dart';
+import 'package:provider/provider.dart';
 
 class MenuScreen extends StatelessWidget {
   const MenuScreen({Key? key}) : super(key: key);
@@ -16,11 +18,12 @@ class MenuScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BaseLayout(
-      body: Column(
+        body: Consumer<ThemeProvider>(builder: (context, themeProvider, child) {
+      return Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           RoundedContainer(
-            color: AppColors.redColor,
+            color: themeProvider.themeColor,
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 40.0),
               child: Stack(
@@ -45,6 +48,7 @@ class MenuScreen extends StatelessWidget {
           Column(
             children: [
               ParallelogramButton(
+                  color: themeProvider.themeColor,
                   onPressed: () {
                     Navigator.push(
                       context,
@@ -57,6 +61,7 @@ class MenuScreen extends StatelessWidget {
                 height: 40,
               ),
               ParallelogramButton(
+                  color: themeProvider.themeColor,
                   onPressed: () {
                     Navigator.push(
                       context,
@@ -69,6 +74,7 @@ class MenuScreen extends StatelessWidget {
                 height: 40,
               ),
               ParallelogramButton(
+                  color: themeProvider.themeColor,
                   onPressed: () {
                     Navigator.push(
                       context,
@@ -79,14 +85,21 @@ class MenuScreen extends StatelessWidget {
                   text: "Event theme"),
             ],
           ),
-          Align(
-              alignment: Alignment.bottomRight,
-              child: Padding(
-                padding: const EdgeInsets.only(right: 10.0, bottom: 10.0),
-                child: CircleStrokeButton(iconPath: PngAssets.volunmOn),
-              )),
+          Consumer<SoundProvider>(builder: (context, soundProvider, child) {
+            return Align(
+                alignment: Alignment.bottomRight,
+                child: Padding(
+                  padding: const EdgeInsets.only(right: 10.0, bottom: 10.0),
+                  child: CircleStrokeButton(
+                    iconPath: soundProvider.isSoundOn
+                        ? PngAssets.volunmOn
+                        : PngAssets.volunmOff,
+                    onPressed: () => {soundProvider.toggleSound()},
+                  ),
+                ));
+          })
         ],
-      ),
-    );
+      );
+    }));
   }
 }

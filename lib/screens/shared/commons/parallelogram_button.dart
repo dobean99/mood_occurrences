@@ -5,16 +5,17 @@ import 'package:mood_occurrences/core/constants/app_constants.dart';
 class ParallelogramButton extends StatelessWidget {
   final VoidCallback onPressed;
   final String text;
+  final Color? color;
 
   const ParallelogramButton(
-      {super.key, required this.onPressed, required this.text});
+      {super.key, required this.onPressed, required this.text, this.color});
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: onPressed,
       child: CustomPaint(
-        painter: ParallelogramPainter(),
+        painter: ParallelogramPainter(color: color),
         child: Container(
           padding: const EdgeInsets.symmetric(vertical: 5.0),
           child: Center(
@@ -33,10 +34,12 @@ class ParallelogramButton extends StatelessWidget {
 }
 
 class ParallelogramPainter extends CustomPainter {
+  final Color? color;
+  const ParallelogramPainter({this.color});
   @override
   void paint(Canvas canvas, Size size) {
     Paint paint = Paint()
-      ..color = AppColors.redColor; // Change the color as needed
+      ..color = color ?? AppColors.redColor; // Change the color as needed
 
     final Path path = Path()
       ..moveTo(40, size.height)

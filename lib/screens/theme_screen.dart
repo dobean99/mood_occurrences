@@ -2,11 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:mood_occurrences/config/assets/assets.dart';
 import 'package:mood_occurrences/core/constants/app_colors.dart';
 import 'package:mood_occurrences/core/constants/app_constants.dart';
+import 'package:mood_occurrences/screens/provider/theme_provider.dart';
 import 'package:mood_occurrences/screens/shared/commons/base_layout.dart';
 import 'package:mood_occurrences/screens/shared/commons/circle_color_button.dart';
 import 'package:mood_occurrences/screens/shared/commons/circle_stroke_button.dart';
 import 'package:mood_occurrences/screens/shared/commons/parallelogram_button.dart';
 import 'package:mood_occurrences/screens/shared/commons/rounded_container.dart';
+import 'package:provider/provider.dart';
 
 class ThemeScreen extends StatelessWidget {
   const ThemeScreen({Key? key}) : super(key: key);
@@ -14,7 +16,8 @@ class ThemeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BaseLayout(
-      body: Column(
+        body: Consumer<ThemeProvider>(builder: (context, themeProvider, child) {
+      return Column(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           Stack(
@@ -32,9 +35,9 @@ class ThemeScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              const RoundedContainer(
-                color: AppColors.redColor,
-                child: Padding(
+              RoundedContainer(
+                color: themeProvider.themeColor,
+                child: const Padding(
                   padding: EdgeInsets.symmetric(vertical: 40.0, horizontal: 20),
                   child: Text(
                     "Event theme",
@@ -53,7 +56,10 @@ class ThemeScreen extends StatelessWidget {
           ),
           Column(
             children: [
-              ParallelogramButton(onPressed: () {}, text: "Choose Event theme"),
+              ParallelogramButton(
+                  color: themeProvider.themeColor,
+                  onPressed: () {},
+                  text: "Choose Event theme"),
               const SizedBox(
                 height: 40,
               ),
@@ -62,21 +68,32 @@ class ThemeScreen extends StatelessWidget {
                 // crossAxisAlignment: CrossAxisAlignment.baseline,
                 children: [
                   CircleColorButton(
-                      color: AppColors.yellowColor, onPressed: () {}),
+                      color: AppColors.yellowColor,
+                      onPressed: () {
+                        themeProvider.setThemeColor(AppColors.yellowColor);
+                      }),
                   CircleColorButton(
-                      color: AppColors.greenColor, onPressed: () {}),
+                      color: AppColors.greenColor,
+                      onPressed: () {
+                        themeProvider.setThemeColor(AppColors.greenColor);
+                      }),
                   CircleColorButton(
-                      color: AppColors.blackColor, onPressed: () {}),
+                      color: AppColors.blackColor,
+                      onPressed: () {
+                        themeProvider.setThemeColor(AppColors.blackColor);
+                      }),
                   CircleColorButton(
                       color: AppColors.redColor,
-                      onPressed: () {},
+                      onPressed: () {
+                        themeProvider.setThemeColor(AppColors.redColor);
+                      },
                       isSelected: true),
                 ],
               ),
             ],
           ),
         ],
-      ),
-    );
+      );
+    }));
   }
 }

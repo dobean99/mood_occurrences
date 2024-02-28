@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:mood_occurrences/config/assets/assets.dart';
-import 'package:mood_occurrences/core/constants/app_colors.dart';
 import 'package:mood_occurrences/core/constants/app_constants.dart';
+import 'package:mood_occurrences/screens/provider/theme_provider.dart';
 import 'package:mood_occurrences/screens/shared/commons/base_layout.dart';
 import 'package:mood_occurrences/screens/shared/commons/circle_stroke_button.dart';
 import 'package:mood_occurrences/screens/shared/commons/parallelogram_button.dart';
 import 'package:mood_occurrences/screens/shared/commons/rounded_container.dart';
+import 'package:provider/provider.dart';
 
 class MyEventsScreen extends StatelessWidget {
   const MyEventsScreen({Key? key}) : super(key: key);
@@ -13,7 +14,8 @@ class MyEventsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BaseLayout(
-      body: Column(
+        body: Consumer<ThemeProvider>(builder: (context, themeProvider, child) {
+      return Column(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           Stack(
@@ -31,9 +33,9 @@ class MyEventsScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              const RoundedContainer(
-                color: AppColors.redColor,
-                child: Padding(
+              RoundedContainer(
+                color: themeProvider.themeColor,
+                child: const Padding(
                   padding: EdgeInsets.symmetric(vertical: 20.0, horizontal: 60),
                   child: Text(
                     "My Event",
@@ -49,11 +51,14 @@ class MyEventsScreen extends StatelessWidget {
           ),
           Column(
             children: [
-              ParallelogramButton(onPressed: () {}, text: "Create an event"),
+              ParallelogramButton(
+                  color: themeProvider.themeColor,
+                  onPressed: () {},
+                  text: "Create an event"),
             ],
           ),
         ],
-      ),
-    );
+      );
+    }));
   }
 }

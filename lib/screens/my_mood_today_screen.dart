@@ -1,11 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:mood_occurrences/config/assets/assets.dart';
 import 'package:mood_occurrences/core/constants/app_constants.dart';
+import 'package:mood_occurrences/screens/anxious_screen.dart';
+import 'package:mood_occurrences/screens/energetic_screen.dart';
 import 'package:mood_occurrences/screens/lethargic_screen.dart';
+import 'package:mood_occurrences/screens/mindful_screen.dart';
+import 'package:mood_occurrences/screens/provider/theme_provider.dart';
 import 'package:mood_occurrences/screens/shared/commons/base_layout.dart';
 import 'package:mood_occurrences/screens/shared/commons/circle_stroke_button.dart';
 import 'package:mood_occurrences/screens/shared/commons/parallelogram_button.dart';
 import 'package:mood_occurrences/screens/shared/commons/rounded_container.dart';
+import 'package:mood_occurrences/screens/stressed_screen.dart';
+import 'package:provider/provider.dart';
 
 class MyMoodTodayScreen extends StatelessWidget {
   const MyMoodTodayScreen({Key? key}) : super(key: key);
@@ -13,7 +19,8 @@ class MyMoodTodayScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BaseLayout(
-      body: Column(
+        body: Consumer<ThemeProvider>(builder: (context, themeProvider, child) {
+      return Column(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
@@ -53,6 +60,7 @@ class MyMoodTodayScreen extends StatelessWidget {
           Column(
             children: [
               ParallelogramButton(
+                  color: themeProvider.themeColor,
                   onPressed: () {
                     Navigator.push(
                       context,
@@ -64,23 +72,63 @@ class MyMoodTodayScreen extends StatelessWidget {
               const SizedBox(
                 height: 20,
               ),
-              ParallelogramButton(onPressed: () {}, text: "Stressed"),
+              ParallelogramButton(
+                color: themeProvider.themeColor,
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const StressedScreen()),
+                  );
+                },
+                text: "Stressed",
+              ),
               const SizedBox(
                 height: 20,
               ),
-              ParallelogramButton(onPressed: () {}, text: "Energetic"),
+              ParallelogramButton(
+                color: themeProvider.themeColor,
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const EnergeticScreen()),
+                  );
+                },
+                text: "Energetic",
+              ),
               const SizedBox(
                 height: 20,
               ),
-              ParallelogramButton(onPressed: () {}, text: "Anxious"),
+              ParallelogramButton(
+                color: themeProvider.themeColor,
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const AnxiousScreen()),
+                  );
+                },
+                text: "Anxious",
+              ),
               const SizedBox(
                 height: 20,
               ),
-              ParallelogramButton(onPressed: () {}, text: "Mindful"),
+              ParallelogramButton(
+                color: themeProvider.themeColor,
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const MindfulScreen()),
+                  );
+                },
+                text: "Mindful",
+              ),
             ],
           ),
         ],
-      ),
-    );
+      );
+    }));
   }
 }

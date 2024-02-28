@@ -35,4 +35,56 @@ class AppConstants {
     "Connect with others: Talking to a friend, family member, or therapist about your feelings can help you feel supported and provide a different perspective on your stressors.",
     "Practice self-care: Engage in activities that help you relax and unwind, such as taking a bath, reading a book, listening to music, or spending time in nature.",
   ];
+  static List<String> arrImageStressed = [
+    PngAssets.stressed1,
+    PngAssets.stressed2,
+    PngAssets.stressed3,
+    PngAssets.stressed4,
+  ];
+  static const arrStringEnergetic = [
+    "Exercise: Use your energy to engage in physical activity such as running, cycling, dancing, or playing a sport. Exercise can help boost your mood, increase your energy levels, and improve your overall health",
+    "Start a new project: Take advantage of your energy by starting a new project or working on something you've been putting off. This could be a creative project, a home improvement task, or a personal goal you want to achieve.",
+    "Socialize: Use your energy to connect with friends or family members. Plan a social outing, have a get-together, or simply spend quality time with loved ones.",
+    "Learn something new: Channel your energy into learning something new, whether it's a new skill, hobby, language, or topic of interest. This can help stimulate your mind and keep you engaged.",
+    "Get outdoors: Spend time in nature by going for a hike, taking a walk in the park, or simply enjoying the fresh air. Being outdoors can help boost your mood and energy levels."
+  ];
+  static List<String> arrImageEnergetic = [
+    PngAssets.energetic1,
+    PngAssets.energetic2,
+    PngAssets.energetic3,
+    PngAssets.energetic4,
+    PngAssets.energetic5,
+  ];
+  static const arrStringAnxious = [
+    "Deep breathing: Practice deep breathing exercises to help calm your nervous system. Take slow, deep breaths in through your nose, hold for a few seconds, and then exhale slowly through your mouth.",
+    "Progressive muscle relaxation: Practice progressive muscle relaxation by tensing and then relaxing different muscle groups in your body. This can help reduce physical tension associated with anxiety.",
+    "Grounding techniques: Use grounding techniques such as focusing on your senses (sight, sound, touch, taste, smell) to bring your attention back to the present moment and reduce anxious thoughts.",
+    "Talk to someone: Reach out to a trusted friend, family member, or mental health professional to talk about how you're feeling. Sharing your thoughts and emotions can provide support and perspective."
+  ];
+
+  static List<String> arrImageAnxious = [
+    PngAssets.anxious1,
+    PngAssets.anxious2,
+    PngAssets.anxious3,
+    PngAssets.anxious4,
+  ];
+
+  static const arrStringMindful = [
+    "Engage in everyday activities mindfully: Practice mindfulness in your daily activities such as eating, walking, or washing dishes. Pay attention to the sensations, sounds, and feelings associated with each activity.",
+    "Use mindfulness techniques: Use mindfulness techniques such as body scans, mindful breathing, or mindful walking to bring your attention to the present moment and increase your awareness.",
+    "Connect with nature: Spend time in nature and observe the sights, sounds, and smells around you. Nature can be a powerful way to cultivate mindfulness and a sense of peace.",
+    "Practice gratitude: Cultivate gratitude by reflecting on things you are thankful for in your life. Gratitude can help you stay present and appreciate the moments as they unfold.",
+    "Practice self-compassion: Be kind and compassionate toward yourself as you practice mindfulness. Accept your thoughts and emotions without judgment and treat yourself with kindness and understanding",
+    "Engage in sensory activities: Engage your senses by focusing on what you see, hear, touch, taste, and smell in the present moment. This can help you connect with your immediate environment and enhance your mindfulness practice.",
+    "Seek mindfulness resources: Explore books, apps, or online resources on mindfulness to deepen your understanding and practice of mindfulness techniques."
+  ];
+  static List<String> arrImageMindful = [
+    PngAssets.mindful1,
+    PngAssets.mindful2,
+    PngAssets.mindful3,
+    PngAssets.mindful4,
+    PngAssets.mindful5,
+    PngAssets.mindful6,
+    PngAssets.mindful7,
+  ];
 }

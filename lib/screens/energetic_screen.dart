@@ -9,8 +9,8 @@ import 'package:mood_occurrences/screens/shared/commons/circle_stroke_button.dar
 import 'package:mood_occurrences/screens/shared/commons/rounded_container.dart';
 import 'package:provider/provider.dart';
 
-class LethargicScreen extends StatelessWidget {
-  const LethargicScreen({Key? key}) : super(key: key);
+class EnergeticScreen extends StatelessWidget {
+  const EnergeticScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -41,7 +41,7 @@ class LethargicScreen extends StatelessWidget {
                     padding:
                         EdgeInsets.symmetric(vertical: 40.0, horizontal: 20),
                     child: Text(
-                      "Lethargic",
+                      "Energetic",
                       style: TextStyle(
                           color: Colors.white,
                           fontSize: AppConstants.titleFontSize,
@@ -53,7 +53,7 @@ class LethargicScreen extends StatelessWidget {
               ],
             ),
             const Text(
-              "When you're feeling lethargic, there are several strategies you can try to help boost your energy levels:",
+              "When you're feeling energetic, it's a great opportunity to engage in activities that can help you make the most of that energy. Here are some ideas for things you can do when you're feeling energetic:",
               style: TextStyle(
                   fontSize: AppConstants.bigButtonFontSize,
                   fontWeight: FontWeight.w900,
@@ -63,11 +63,11 @@ class LethargicScreen extends StatelessWidget {
             ListView.builder(
                 shrinkWrap: true,
                 physics: const NeverScrollableScrollPhysics(),
-                itemCount: AppConstants.arrStringLethargic.length,
+                itemCount: AppConstants.arrImageEnergetic.length,
                 itemBuilder: (BuildContext context, int index) {
                   return Column(
                     children: [
-                      Image.asset(AppConstants.arrImageLethargic[index]),
+                      Image.asset(AppConstants.arrImageEnergetic[index]),
                       RichText(
                         textAlign: TextAlign.center,
                         text: TextSpan(
@@ -82,7 +82,7 @@ class LethargicScreen extends StatelessWidget {
                                   style: TextStyle(
                                       color: themeProvider.themeColor)),
                               TextSpan(
-                                  text: AppConstants.arrStringLethargic[index],
+                                  text: AppConstants.arrStringEnergetic[index],
                                   style: const TextStyle(
                                       color: AppColors.textColor))
                             ]),

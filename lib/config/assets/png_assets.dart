@@ -34,6 +34,7 @@ class PngAssets {
   static String get mindful4 => 'mindful_4'.png;
   static String get mindful5 => 'mindful_5'.png;
   static String get mindful6 => 'mindful_6'.png;
+  static String get mindful7 => 'mindful_7'.png;
 
   const PngAssets._();
 }
