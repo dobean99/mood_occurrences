@@ -3,6 +3,8 @@ import 'package:mood_occurrences/config/assets/assets.dart';
 class AppConstants {
   static const titleFontSize = 40.0;
   static const bigButtonFontSize = 24.0;
+  static const textFieldFontSize = 25.0;
+
   static const mediumFontSize = 22.0;
   static const smallFontSize = 16.0;
 

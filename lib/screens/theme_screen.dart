@@ -16,84 +16,86 @@ class ThemeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BaseLayout(
+        background: PngAssets.eventThemeBG,
         body: Consumer<ThemeProvider>(builder: (context, themeProvider, child) {
-      return Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: [
-          Stack(
-            alignment: Alignment.topCenter,
+          return Column(
+            mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              Align(
-                alignment: Alignment.topLeft,
-                child: Padding(
-                  padding: const EdgeInsets.all(20.0),
-                  child: CircleStrokeButton(
-                    iconPath: PngAssets.back,
-                    onPressed: () {
-                      Navigator.pop(context);
-                    },
-                  ),
-                ),
-              ),
-              RoundedContainer(
-                color: themeProvider.themeColor,
-                child: const Padding(
-                  padding: EdgeInsets.symmetric(vertical: 40.0, horizontal: 20),
-                  child: Text(
-                    "Event theme",
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontSize: AppConstants.titleFontSize,
-                        fontWeight: FontWeight.w900),
-                    textAlign: TextAlign.center,
-                  ),
-                ),
-              ),
-            ],
-          ),
-          const SizedBox(
-            height: 120,
-          ),
-          Column(
-            children: [
-              ParallelogramButton(
-                  color: themeProvider.themeColor,
-                  onPressed: () {},
-                  text: "Choose Event theme"),
-              const SizedBox(
-                height: 40,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                // crossAxisAlignment: CrossAxisAlignment.baseline,
+              Stack(
+                alignment: Alignment.topCenter,
                 children: [
-                  CircleColorButton(
-                      color: AppColors.yellowColor,
-                      onPressed: () {
-                        themeProvider.setThemeColor(AppColors.yellowColor);
-                      }),
-                  CircleColorButton(
-                      color: AppColors.greenColor,
-                      onPressed: () {
-                        themeProvider.setThemeColor(AppColors.greenColor);
-                      }),
-                  CircleColorButton(
-                      color: AppColors.blackColor,
-                      onPressed: () {
-                        themeProvider.setThemeColor(AppColors.blackColor);
-                      }),
-                  CircleColorButton(
-                      color: AppColors.redColor,
-                      onPressed: () {
-                        themeProvider.setThemeColor(AppColors.redColor);
-                      },
-                      isSelected: true),
+                  Align(
+                    alignment: Alignment.topLeft,
+                    child: Padding(
+                      padding: const EdgeInsets.all(20.0),
+                      child: CircleStrokeButton(
+                        iconPath: PngAssets.back,
+                        onPressed: () {
+                          Navigator.pop(context);
+                        },
+                      ),
+                    ),
+                  ),
+                  RoundedContainer(
+                    color: themeProvider.themeColor,
+                    child: const Padding(
+                      padding:
+                          EdgeInsets.symmetric(vertical: 40.0, horizontal: 20),
+                      child: Text(
+                        "Event theme",
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: AppConstants.titleFontSize,
+                            fontWeight: FontWeight.w900),
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(
+                height: 120,
+              ),
+              Column(
+                children: [
+                  ParallelogramButton(
+                      color: themeProvider.themeColor,
+                      onPressed: () {},
+                      text: "Choose Event theme"),
+                  const SizedBox(
+                    height: 40,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    // crossAxisAlignment: CrossAxisAlignment.baseline,
+                    children: [
+                      CircleColorButton(
+                          color: AppColors.yellowColor,
+                          onPressed: () {
+                            themeProvider.setThemeColor(AppColors.yellowColor);
+                          }),
+                      CircleColorButton(
+                          color: AppColors.greenColor,
+                          onPressed: () {
+                            themeProvider.setThemeColor(AppColors.greenColor);
+                          }),
+                      CircleColorButton(
+                          color: AppColors.blackColor,
+                          onPressed: () {
+                            themeProvider.setThemeColor(AppColors.blackColor);
+                          }),
+                      CircleColorButton(
+                        color: AppColors.redColor,
+                        onPressed: () {
+                          themeProvider.setThemeColor(AppColors.redColor);
+                        },
+                      ),
+                    ],
+                  ),
                 ],
               ),
             ],
-          ),
-        ],
-      );
-    }));
+          );
+        }));
   }
 }

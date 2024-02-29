@@ -1,12 +1,18 @@
 class PngAssets {
   static String get logo => 'logo'.png;
   static String get menuBG => 'menu_bg'.png;
+  static String get eventThemeBG => 'event_theme'.png;
+  static String get myMoodTodayBG => 'my_mood_today'.png;
+  static String get myMoodTodayBG1 => 'my_mood_today_1'.png;
+
   static String get volunmOff => 'volunm_off'.png;
   static String get volunmOn => 'volunm_on'.png;
   static String get message => 'message'.png;
   static String get back => 'back'.png;
   static String get like => 'like'.png;
   static String get dislike => 'dislike'.png;
+  static String get add => 'add'.png;
+  static String get calendar => 'calendar'.png;
 
   static String get lethargic1 => 'lethargic_1'.png;
   static String get lethargic2 => 'lethargic_2'.png;

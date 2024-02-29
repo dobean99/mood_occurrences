@@ -1,33 +1,18 @@
+import 'package:flame_audio/flame_audio.dart';
 import 'package:flutter/material.dart';
-import 'package:just_audio/just_audio.dart';
-import 'package:mood_occurrences/config/assets/assets.dart';
+import 'package:mood_occurrences/config/assets/audio_assets.dart';
 
 class SoundProvider extends ChangeNotifier {
-  bool _isSoundOn = false;
-  final AudioPlayer _audioPlayer = AudioPlayer();
-
+  bool _isSoundOn = true;
   bool get isSoundOn => _isSoundOn;
 
-  Future<void> _loadSound() async {
-    try {
-      await _audioPlayer.setAsset(AudioAssets.bgAudio, preload: true);
-    } catch (e) {
-      print("Error loading audio: $e");
-    }
-  }
-
-  void toggleSound() async {
+  void toggleSound() {
     _isSoundOn = !_isSoundOn;
-
     if (_isSoundOn) {
-      await _loadSound();
-      _audioPlayer.setLoopMode(LoopMode.one);
-      _audioPlayer.play();
+      FlameAudio.bgm.play(AudioAssets.bgAudio);
     } else {
-      await _audioPlayer.stop();
-      await _audioPlayer.dispose();
+      FlameAudio.bgm.stop();
     }
-
     notifyListeners();
   }
 }
