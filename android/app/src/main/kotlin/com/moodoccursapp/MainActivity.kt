@@ -1,4 +1,4 @@
-package com.example.mood_occurrences
+package com.moodoccursapp
 
 import io.flutter.embedding.android.FlutterActivity
 
